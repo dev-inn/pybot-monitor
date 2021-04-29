@@ -1,0 +1,27 @@
+{
+  "name": "pybot-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "server": "npm run prettier-format && tsc && node out/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@noodlewrecker7/logger": "^2.1.4",
+    "child_process": "^1.0.2",
+    "eslint": "^7.25.0",
+    "express": "^4.17.1",
+    "prettier": "^2.2.1",
+    "source-map-support": "^0.5.19",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^15.0.1"
+  }
+}
