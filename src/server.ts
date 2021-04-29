@@ -23,7 +23,7 @@ app.listen(PORT, () => {
   const python = spawn('python3', ['./bot.py'], { cwd: './innkeeper' });
 
   python.onData((data: string) => {
-    if (data == '') {
+    if (data == '\r\n') {
       return;
     }
     Logger.debug(data);
