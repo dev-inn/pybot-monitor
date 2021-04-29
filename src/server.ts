@@ -12,7 +12,7 @@ const PORT = 1234;
 
 const app: Application = express();
 
-const pythonLog = '';
+const pythonLog: string[] = [];
 
 app.get('/log', (req, res) => {
   res.send(pythonLog);
@@ -22,15 +22,11 @@ app.listen(PORT, () => {
   Logger.info('listening on port: ' + PORT);
   const python = spawn('python3', ['./bot.py'], { cwd: './innkeeper' });
 
-  /* python.on('data', function (data) {
-    Logger.debug(data.toString());
-    pythonLog += data.toString();
-  });*/
   python.onData((data: string) => {
+    if (data == '') {
+      return;
+    }
     Logger.debug(data);
+    pythonLog.push(data);
   });
-  /*  python.on('data', (data) => {
-      Logger.error(data.toString());
-      pythonLog += data.toString();
-    });*/
 });
