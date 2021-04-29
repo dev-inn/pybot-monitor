@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "server": "npm run prettier-format && tsc && node out/server.js"
+    "server": "npm run prettier-format && tsc && pip3 install -r ./innkeeper/requirements.txt && node out/server.js"
   },
   "keywords": [],
   "author": "",

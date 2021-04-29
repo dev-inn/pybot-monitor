@@ -26,7 +26,7 @@ app.listen(PORT, () => {
     Logger.debug(data.toString());
     pythonLog += data.toString();
   });*/
-  python.onData((data) => {
+  python.onData((data: string) => {
     Logger.debug(data);
   });
   /*  python.on('data', (data) => {
