@@ -13,8 +13,11 @@
   "license": "ISC",
   "dependencies": {
     "@noodlewrecker7/logger": "^2.1.4",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
     "child_process": "^1.0.2",
     "eslint": "^7.25.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "express": "^4.17.1",
     "prettier": "^2.2.1",
     "source-map-support": "^0.5.19",
