@@ -17,10 +17,15 @@ const pythonLog: string[] = [];
 app.get('/log', (req, res) => {
   res.send(pythonLog);
 });
+app.get('/reload', (req, res) => {
+  launchScript();
+  res.send("<script>window.location.href='log'</script>");
+});
 
-app.listen(PORT, () => {
-  Logger.info('listening on port: ' + PORT);
-  const python = spawn('python3', ['./bot.py'], { cwd: './innkeeper' });
+let python;
+
+function launchScript() {
+  python = spawn('python3', ['./bot.py'], { cwd: './innkeeper' });
 
   python.onData((data: string) => {
     if (data == '\r\n') {
@@ -29,4 +34,9 @@ app.listen(PORT, () => {
     Logger.debug(data);
     pythonLog.push(data);
   });
+}
+
+app.listen(PORT, () => {
+  Logger.info('listening on port: ' + PORT);
+  launchScript();
 });
