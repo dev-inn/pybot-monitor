@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "server": "npm run prettier-format && tsc && pip3 install -r ./innkeeper/requirements.txt && node out/server.js",
-    "start": "nodemon --watch './innkeeper' --ext 'py,txt,ts' --exec 'npm run server"
+    "start": "nodemon --watch './innkeeper' --ext 'py,txt,ts' --exec 'npm run server'"
   },
   "keywords": [],
   "author": "",
