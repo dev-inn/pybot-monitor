@@ -25,7 +25,7 @@ app.get('/reload', (req, res) => {
 let python;
 
 function launchScript() {
-  python = spawn('python3', ['./bot.py'], { cwd: './innkeeper' });
+  python = spawn('python3', ['./start.py'], { cwd: './innkeeper' });
 
   python.onData((data: string) => {
     if (data == '\r\n') {
